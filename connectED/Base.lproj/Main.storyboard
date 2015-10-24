@@ -20,12 +20,93 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background image" translatesAutoresizingMaskIntoConstraints="NO" id="PbS-jJ-8aK">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ab1-Ll-WwA" customClass="DesignableButton" customModule="connectED" customModuleProvider="target">
+                                <rect key="frame" x="61" y="465" width="101" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="101" id="gO4-Wk-hIl"/>
+                                    <constraint firstAttribute="height" constant="36" id="u34-R2-1Vi"/>
+                                </constraints>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.14901960784313725" green="0.18431372549019609" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" red="0.14901960784313725" green="0.18431372549019609" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerSize">
+                                        <real key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EsI-0G-iDh">
+                                <rect key="frame" x="0.0" y="111" width="320" height="108"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo180" translatesAutoresizingMaskIntoConstraints="NO" id="AAg-ij-jYe">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="AAg-ij-jYe" firstAttribute="leading" secondItem="EsI-0G-iDh" secondAttribute="leading" id="58h-en-gs0"/>
+                                    <constraint firstItem="AAg-ij-jYe" firstAttribute="top" secondItem="EsI-0G-iDh" secondAttribute="top" id="K1E-In-Bl3"/>
+                                    <constraint firstAttribute="trailing" secondItem="AAg-ij-jYe" secondAttribute="trailing" id="fdS-Wo-KmU"/>
+                                    <constraint firstAttribute="bottom" secondItem="AAg-ij-jYe" secondAttribute="bottom" id="qPU-TB-t5g"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDB-ea-gOk" customClass="DesignableButton" customModule="connectED" customModuleProvider="target">
+                                <rect key="frame" x="170" y="465" width="101" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="101" id="NGU-QC-ZDF"/>
+                                    <constraint firstAttribute="height" constant="36" id="ck6-RO-gyS"/>
+                                </constraints>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.14901960780000001" green="0.1843137255" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" red="0.14901960780000001" green="0.1843137255" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerSize">
+                                        <real key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creating moments to teach and learn." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eit-Z2-Yqx">
+                                <rect key="frame" x="80" y="285" width="230" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="RjC-HK-GOc"/>
+                                    <constraint firstAttribute="height" constant="45" id="V6h-iR-jw9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dRd-PW-lxL" firstAttribute="top" secondItem="PbS-jJ-8aK" secondAttribute="bottom" id="49m-Gz-NXS"/>
-                            <constraint firstAttribute="trailing" secondItem="PbS-jJ-8aK" secondAttribute="trailing" id="RD6-g0-DnX"/>
-                            <constraint firstItem="PbS-jJ-8aK" firstAttribute="leading" secondItem="a6T-ao-MEg" secondAttribute="leading" id="s7g-gs-4fA"/>
+                            <constraint firstItem="PbS-jJ-8aK" firstAttribute="trailing" secondItem="EsI-0G-iDh" secondAttribute="trailing" id="4nJ-1m-VFm"/>
+                            <constraint firstItem="PbS-jJ-8aK" firstAttribute="leading" secondItem="a6T-ao-MEg" secondAttribute="leading" id="7UN-nL-9ue"/>
+                            <constraint firstItem="PbS-jJ-8aK" firstAttribute="leading" secondItem="ab1-Ll-WwA" secondAttribute="trailing" constant="-162" id="COP-UJ-wzl"/>
+                            <constraint firstItem="dRd-PW-lxL" firstAttribute="top" secondItem="PDB-ea-gOk" secondAttribute="bottom" constant="67" id="Cas-8h-3kU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eit-Z2-Yqx" secondAttribute="trailing" constant="-6" id="I5g-6z-N6U"/>
+                            <constraint firstItem="PDB-ea-gOk" firstAttribute="leading" secondItem="PbS-jJ-8aK" secondAttribute="trailing" constant="-150" id="JFg-h1-Kn7"/>
+                            <constraint firstAttribute="trailing" secondItem="PbS-jJ-8aK" secondAttribute="trailing" id="O2k-MG-Zuu"/>
+                            <constraint firstItem="eit-Z2-Yqx" firstAttribute="top" secondItem="EsI-0G-iDh" secondAttribute="bottom" constant="66" id="VE2-US-ooO"/>
+                            <constraint firstAttribute="trailing" secondItem="EsI-0G-iDh" secondAttribute="trailing" id="ZEi-xT-rUZ"/>
+                            <constraint firstItem="EsI-0G-iDh" firstAttribute="top" secondItem="Lg9-qN-1Zq" secondAttribute="bottom" constant="47" id="iWd-mj-QS1"/>
+                            <constraint firstItem="EsI-0G-iDh" firstAttribute="leading" secondItem="a6T-ao-MEg" secondAttribute="leading" id="o0Z-Px-6KX"/>
+                            <constraint firstItem="dRd-PW-lxL" firstAttribute="top" secondItem="ab1-Ll-WwA" secondAttribute="bottom" constant="67" id="uB1-td-Vbv"/>
+                            <constraint firstItem="PDB-ea-gOk" firstAttribute="leading" secondItem="ab1-Ll-WwA" secondAttribute="trailing" constant="8" id="xBN-5F-gVS"/>
+                            <constraint firstAttribute="bottom" secondItem="EsI-0G-iDh" secondAttribute="bottom" constant="349" id="yPa-Ud-fGa"/>
                             <constraint firstItem="PbS-jJ-8aK" firstAttribute="top" secondItem="Lg9-qN-1Zq" secondAttribute="bottom" id="zcR-YH-Jqc"/>
                         </constraints>
                     </view>
@@ -824,6 +905,7 @@
     </scenes>
     <resources>
         <image name="Background image" width="762" height="1340"/>
+        <image name="logo180" width="567" height="180"/>
         <image name="prohibition37" width="32" height="32"/>
     </resources>
 </document>
