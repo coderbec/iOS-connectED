@@ -16,7 +16,18 @@
                     <view key="view" contentMode="scaleToFill" id="a6T-ao-MEg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background image" translatesAutoresizingMaskIntoConstraints="NO" id="PbS-jJ-8aK">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dRd-PW-lxL" firstAttribute="top" secondItem="PbS-jJ-8aK" secondAttribute="bottom" id="49m-Gz-NXS"/>
+                            <constraint firstAttribute="trailing" secondItem="PbS-jJ-8aK" secondAttribute="trailing" id="RD6-g0-DnX"/>
+                            <constraint firstItem="PbS-jJ-8aK" firstAttribute="leading" secondItem="a6T-ao-MEg" secondAttribute="leading" id="s7g-gs-4fA"/>
+                            <constraint firstItem="PbS-jJ-8aK" firstAttribute="top" secondItem="Lg9-qN-1Zq" secondAttribute="bottom" id="zcR-YH-Jqc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="z4t-hV-Zmv"/>
                     <connections>
@@ -268,11 +279,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="140" id="tAV-iN-MXS" customClass="OverviewTableViewCell" customModule="connectED" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="140" id="tAV-iN-MXS" customClass="OverviewTableViewCell" customModule="connectED" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="320" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tAV-iN-MXS" id="UgP-TE-MMJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="139.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="139.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="M 25 getting an EKG, triple bypass likely, more text and something else" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1I-ZE-cUx">
@@ -315,6 +326,7 @@
                                     <outlet property="quotaLabel" destination="UD6-Ag-Dfy" id="pUy-6E-fDh"/>
                                     <outlet property="tagViewLabel" destination="Aex-l0-8o5" id="UUc-ea-5oh"/>
                                     <outlet property="timeLabel" destination="hZX-DV-BYP" id="TPD-ex-83a"/>
+                                    <segue destination="pUv-S8-wfL" kind="push" identifier="showDetail" id="sNQ-Ht-C2g"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -471,7 +483,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Aq-YT-3dG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473" y="-122"/>
+            <point key="canvasLocation" x="1552" y="-336"/>
         </scene>
         <!--Settings-->
         <scene sceneID="h1z-Pv-0gh">
@@ -618,7 +630,26 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ejg-Jm-9ya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094" y="502"/>
+            <point key="canvasLocation" x="1094" y="593"/>
+        </scene>
+        <!--Event Detail View Controller-->
+        <scene sceneID="QgI-nr-3Xt">
+            <objects>
+                <viewController id="pUv-S8-wfL" customClass="EventDetailViewController" customModule="connectED" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b3q-eK-Sc1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mir-Pb-Zzd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bSl-NK-E2E">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rDG-lV-bwQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5aW-g6-TkZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1546" y="325"/>
         </scene>
         <!--Entry View Controller-->
         <scene sceneID="XhM-mq-lIZ">
@@ -792,6 +823,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Background image" width="762" height="1340"/>
         <image name="prohibition37" width="32" height="32"/>
     </resources>
 </document>

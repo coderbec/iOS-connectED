@@ -91,7 +91,17 @@ class OverviewTableViewController: UITableViewController {
         
     }
     
-    // MARK: - Table view data source
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail" {
+            if let destination = segue.destinationViewController as? EventDetailViewController{
+                if let blogIndex = tableView.indexPathForSelectedRow?.row {
+                    destination.event = events[blogIndex]
+                }
+            }
+        }
+    }
+
     
     // MARK: - Table view data source
     

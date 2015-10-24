@@ -29,6 +29,8 @@
 		89E629CC1BDAFA2F00FC142D /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E629CB1BDAFA2F00FC142D /* EntryViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		89E629CE1BDAFD1500FC142D /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E629CD1BDAFD1500FC142D /* SignUpTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		89E629D01BDAFF4000FC142D /* SessionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E629CF1BDAFF4000FC142D /* SessionsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		89F436BA1BDC21BB009AF1A2 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F436B91BDC21BB009AF1A2 /* EventDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		89F436BC1BDC245B009AF1A2 /* CustomButtonOrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F436BB1BDC245B009AF1A2 /* CustomButtonOrView.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		89E629CB1BDAFA2F00FC142D /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		89E629CD1BDAFD1500FC142D /* SignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 		89E629CF1BDAFF4000FC142D /* SessionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsTableViewController.swift; sourceTree = "<group>"; };
+		89F436B91BDC21BB009AF1A2 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		89F436BB1BDC245B009AF1A2 /* CustomButtonOrView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonOrView.swift; sourceTree = "<group>"; };
 		F3EE9A8FFEDE7C5CD4E365C6 /* Pods-connectED.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-connectED.release.xcconfig"; path = "Pods/Target Support Files/Pods-connectED/Pods-connectED.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,11 +162,13 @@
 				89E629CF1BDAFF4000FC142D /* SessionsTableViewController.swift */,
 				892E213F1BDB0C2600E25317 /* TextFieldEffects */,
 				892E21411BDB0C7D00E25317 /* connectED-Bridging-Header.h */,
+				89F436BB1BDC245B009AF1A2 /* CustomButtonOrView.swift */,
 				892E21481BDB1B5300E25317 /* SettingsTableViewController.swift */,
 				89BD5A591BDB582C00A390C5 /* NewEventTableViewController.swift */,
 				89BD5A5B1BDB5CEE00A390C5 /* TagTableViewController.swift */,
 				89B598541BDB70ED00375807 /* AutoCompleteTextfield.swift */,
 				89B598581BDB882800375807 /* KSTokenView */,
+				89F436B91BDC21BB009AF1A2 /* EventDetailViewController.swift */,
 			);
 			path = connectED;
 			sourceTree = "<group>";
@@ -383,6 +389,8 @@
 				89E629CC1BDAFA2F00FC142D /* EntryViewController.swift in Sources */,
 				89BD5A581BDB4FEB00A390C5 /* IJProgressView.swift in Sources */,
 				89BD5A5A1BDB582C00A390C5 /* NewEventTableViewController.swift in Sources */,
+				89F436BC1BDC245B009AF1A2 /* CustomButtonOrView.swift in Sources */,
+				89F436BA1BDC21BB009AF1A2 /* EventDetailViewController.swift in Sources */,
 				89E6299D1BDAE71700FC142D /* connectED.xcdatamodeld in Sources */,
 				89BD5A5C1BDB5CEE00A390C5 /* TagTableViewController.swift in Sources */,
 				89E629CA1BDAF9C200FC142D /* OverviewTableViewCell.swift in Sources */,
