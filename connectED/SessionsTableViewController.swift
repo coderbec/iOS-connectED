@@ -120,7 +120,7 @@ class SessionsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell:SessionsTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! SessionsTableViewCell
+        let cell:SessionsTableViewCell = tableView.dequeueReusableCellWithIdentifier("NewCell") as! SessionsTableViewCell
         // let cell:OverviewTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! OverviewTableViewCell
         
         let owner: PFUser = events[indexPath.row]["owner"] as! PFUser
