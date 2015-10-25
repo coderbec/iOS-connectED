@@ -11,9 +11,7 @@
 		892E21401BDB0C2600E25317 /* TextFieldEffects in Resources */ = {isa = PBXBuildFile; fileRef = 892E213F1BDB0C2600E25317 /* TextFieldEffects */; settings = {ASSET_TAGS = (); }; };
 		892E21491BDB1B5300E25317 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E21481BDB1B5300E25317 /* SettingsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		89B598551BDB70ED00375807 /* AutoCompleteTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B598541BDB70ED00375807 /* AutoCompleteTextfield.swift */; settings = {ASSET_TAGS = (); }; };
-		89B598591BDB882800375807 /* KSTokenView in Resources */ = {isa = PBXBuildFile; fileRef = 89B598581BDB882800375807 /* KSTokenView */; settings = {ASSET_TAGS = (); }; };
 		89BD5A581BDB4FEB00A390C5 /* IJProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BD5A571BDB4FEB00A390C5 /* IJProgressView.swift */; settings = {ASSET_TAGS = (); }; };
-		89BD5A5A1BDB582C00A390C5 /* NewEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BD5A591BDB582C00A390C5 /* NewEventTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		89BD5A5C1BDB5CEE00A390C5 /* TagTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BD5A5B1BDB5CEE00A390C5 /* TagTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		89E629951BDAE71700FC142D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E629941BDAE71700FC142D /* AppDelegate.swift */; };
 		89E629971BDAE71700FC142D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E629961BDAE71700FC142D /* ViewController.swift */; };
@@ -31,6 +29,9 @@
 		89E629D01BDAFF4000FC142D /* SessionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E629CF1BDAFF4000FC142D /* SessionsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		89F436BA1BDC21BB009AF1A2 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F436B91BDC21BB009AF1A2 /* EventDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		89F436BC1BDC245B009AF1A2 /* CustomButtonOrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F436BB1BDC245B009AF1A2 /* CustomButtonOrView.swift */; settings = {ASSET_TAGS = (); }; };
+		89F436BE1BDC3706009AF1A2 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F436BD1BDC3706009AF1A2 /* LandingViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		89F436C01BDC5B6A009AF1A2 /* SessionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F436BF1BDC5B6A009AF1A2 /* SessionsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		89F436C21BDC6DA7009AF1A2 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F436C11BDC6DA7009AF1A2 /* NewEventViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,9 +58,7 @@
 		892E21411BDB0C7D00E25317 /* connectED-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "connectED-Bridging-Header.h"; sourceTree = "<group>"; };
 		892E21481BDB1B5300E25317 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		89B598541BDB70ED00375807 /* AutoCompleteTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextfield.swift; sourceTree = "<group>"; };
-		89B598581BDB882800375807 /* KSTokenView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = KSTokenView; sourceTree = "<group>"; };
 		89BD5A571BDB4FEB00A390C5 /* IJProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IJProgressView.swift; sourceTree = "<group>"; };
-		89BD5A591BDB582C00A390C5 /* NewEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventTableViewController.swift; sourceTree = "<group>"; };
 		89BD5A5B1BDB5CEE00A390C5 /* TagTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTableViewController.swift; sourceTree = "<group>"; };
 		89E629911BDAE71700FC142D /* connectED.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = connectED.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E629941BDAE71700FC142D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +82,9 @@
 		89E629CF1BDAFF4000FC142D /* SessionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsTableViewController.swift; sourceTree = "<group>"; };
 		89F436B91BDC21BB009AF1A2 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		89F436BB1BDC245B009AF1A2 /* CustomButtonOrView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonOrView.swift; sourceTree = "<group>"; };
+		89F436BD1BDC3706009AF1A2 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		89F436BF1BDC5B6A009AF1A2 /* SessionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsTableViewCell.swift; sourceTree = "<group>"; };
+		89F436C11BDC6DA7009AF1A2 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		F3EE9A8FFEDE7C5CD4E365C6 /* Pods-connectED.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-connectED.release.xcconfig"; path = "Pods/Target Support Files/Pods-connectED/Pods-connectED.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,11 +166,12 @@
 				892E21411BDB0C7D00E25317 /* connectED-Bridging-Header.h */,
 				89F436BB1BDC245B009AF1A2 /* CustomButtonOrView.swift */,
 				892E21481BDB1B5300E25317 /* SettingsTableViewController.swift */,
-				89BD5A591BDB582C00A390C5 /* NewEventTableViewController.swift */,
 				89BD5A5B1BDB5CEE00A390C5 /* TagTableViewController.swift */,
 				89B598541BDB70ED00375807 /* AutoCompleteTextfield.swift */,
-				89B598581BDB882800375807 /* KSTokenView */,
 				89F436B91BDC21BB009AF1A2 /* EventDetailViewController.swift */,
+				89F436BD1BDC3706009AF1A2 /* LandingViewController.swift */,
+				89F436BF1BDC5B6A009AF1A2 /* SessionsTableViewCell.swift */,
+				89F436C11BDC6DA7009AF1A2 /* NewEventViewController.swift */,
 			);
 			path = connectED;
 			sourceTree = "<group>";
@@ -306,7 +309,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89B598591BDB882800375807 /* KSTokenView in Resources */,
 				89E629A21BDAE71700FC142D /* LaunchScreen.storyboard in Resources */,
 				892E21401BDB0C2600E25317 /* TextFieldEffects in Resources */,
 				89E6299F1BDAE71700FC142D /* Assets.xcassets in Resources */,
@@ -383,12 +385,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89F436C01BDC5B6A009AF1A2 /* SessionsTableViewCell.swift in Sources */,
 				89E629C61BDAEF2600FC142D /* LoginViewController.swift in Sources */,
 				89E629971BDAE71700FC142D /* ViewController.swift in Sources */,
 				89E629C81BDAF99200FC142D /* OverviewTableViewController.swift in Sources */,
+				89F436C21BDC6DA7009AF1A2 /* NewEventViewController.swift in Sources */,
 				89E629CC1BDAFA2F00FC142D /* EntryViewController.swift in Sources */,
 				89BD5A581BDB4FEB00A390C5 /* IJProgressView.swift in Sources */,
-				89BD5A5A1BDB582C00A390C5 /* NewEventTableViewController.swift in Sources */,
 				89F436BC1BDC245B009AF1A2 /* CustomButtonOrView.swift in Sources */,
 				89F436BA1BDC21BB009AF1A2 /* EventDetailViewController.swift in Sources */,
 				89E6299D1BDAE71700FC142D /* connectED.xcdatamodeld in Sources */,
@@ -396,6 +399,7 @@
 				89E629CA1BDAF9C200FC142D /* OverviewTableViewCell.swift in Sources */,
 				89B598551BDB70ED00375807 /* AutoCompleteTextfield.swift in Sources */,
 				892E21491BDB1B5300E25317 /* SettingsTableViewController.swift in Sources */,
+				89F436BE1BDC3706009AF1A2 /* LandingViewController.swift in Sources */,
 				89E629951BDAE71700FC142D /* AppDelegate.swift in Sources */,
 				89E629CE1BDAFD1500FC142D /* SignUpTableViewController.swift in Sources */,
 				89E629D01BDAFF4000FC142D /* SessionsTableViewController.swift in Sources */,

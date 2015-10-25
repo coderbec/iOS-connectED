@@ -10,55 +10,48 @@ import UIKit
 import Parse
 import Bolts
 import ParseUI
+import SwiftValidator
 
 
-class LoginViewController: PFLogInViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate  {
+class LoginViewController: ViewController  {
+    
+    
+    @IBOutlet weak var username: UITextField!
+    
+    @IBOutlet weak var passwordField: UITextField!
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.delegate = self
-        //self.signUpController.delegate = self
-        
-        self.logInView!.logo = UIImageView(image: UIImage(named: "logo"))
-        
-        self.logInView!.logo!.contentMode = .Center
-        
-        //self.signUpController.signUpView.logo.contentMode = UIViewContentMode.Center
-        
-        self.logInView!.signUpButton!.removeTarget(self, action: nil, forControlEvents: .AllEvents)
-        
-        //self.logInView!.signUpButton!.addTarget(self, action: "displaySignUp", forControlEvents: .TouchUpInside)
-        
-        self.logInView!.signUpButton!.addTarget(self, action: "buttonPressed:", forControlEvents: .TouchUpInside)
-        
+      
         if PFUser.currentUser() != nil {
             showOverview()
         }
 
     }
 
+
     
-    func logInViewController(logInController: PFLogInViewController!, didLogInUser user: PFUser!) {
-        
-        let installation = PFInstallation.currentInstallation()
-        installation["user"] = PFUser.currentUser()
-        installation.saveInBackgroundWithBlock(nil)
-        
-        showOverview()
+    @IBAction func signIn(sender: AnyObject) {
+        if username.text != nil && passwordField.text != nil{
+            login(username.text!, password: passwordField.text!)
+        }
     }
     
-    
-    
-    /*func signUpViewController(signUpController: PFSignUpViewController!, didSignUpUser user: PFUser!) {
-    signUpController.dismissViewControllerAnimated(true, completion: { () -> Void in
-    let installation = PFInstallation.currentInstallation()
-    installation["user"] = PFUser.currentUser()
-    installation.saveInBackgroundWithBlock(nil)
-    self.showChatOverview()
-    })
-    }*/
-    
+    func login(username: String, password: String){
+        PFUser.logInWithUsernameInBackground(username, password:password) {
+            (user: PFUser?, error: NSError?) -> Void in
+            if user != nil {
+                // Do stuff after successful login.
+                self.showOverview()
+            } else {
+                // The login failed. Check error to see why.
+            }
+        }
+    }
     
     func showOverview() {
         
@@ -69,17 +62,6 @@ class LoginViewController: PFLogInViewController, PFLogInViewControllerDelegate,
         overviewVC.navigationItem.setHidesBackButton(true, animated: false)
         
         self.navigationController!.pushViewController(overviewVC, animated: true)
-        
-    }
-    
-    func buttonPressed(sender: UIButton!) {
-        
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        
-        let signUpVC = sb.instantiateViewControllerWithIdentifier("SignUpVC") as! SignUpTableViewController
-        
-        
-        self.performSegueWithIdentifier("signUp", sender: self)
         
     }
     

@@ -9,45 +9,62 @@
 import UIKit
 import Parse
 import ParseUI
+import DKDropMenu
 
-class SignUpTableViewController: UITableViewController {
+class SignUpTableViewController: UIViewController, DKDropMenuDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailDropDown: DKDropMenu!
+    
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var repeatPasswordTextField: UITextField!
+
     @IBOutlet weak var specialtyField: UITextField!
     @IBOutlet weak var rankField: UITextField!
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
     
-    @IBOutlet weak var doneBarButtonItem: UIBarButtonItem!
-
-    
+    var email: String?
     
     var change = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.rightBarButtonItem = doneBarButtonItem
-        
-        if change {
-            doneBarButtonItem.action = "changeProfile"
-            
-            emailTextField.text = PFUser.currentUser()!.email
-            firstNameField.text = PFUser.currentUser()!["firstName"] as! String
-            lastNameField.text = PFUser.currentUser()!["lastName"] as! String
-            
-            passwordTextField.enabled = false
-            repeatPasswordTextField.enabled = false
-            
-            rankField.text = PFUser.currentUser()!["rank"] as! String
-            specialtyField.text = PFUser.currentUser()!["specialty"] as! String
-            
-            
-            
-        }
 
+        
+        //set up the drop menu
+        
+        getDropDown()
+        
+        emailDropDown.delegate = self
+        
+
+
+    }
+    
+    func itemSelectedWithIndex(index: Int, name: String) {
+        print("\(name) selected");
+        email = name
+    }
+
+    func getDropDown(){
+        var query = PFQuery(className:"HospitalAvail")
+        query.findObjectsInBackgroundWithBlock {
+            (objects, error) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) scores.")
+                // Do something with the found objects
+                for object in objects! {
+                self.emailDropDown.addItems(object["allowedEmails"] as! [String])
+                       
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!)")
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,31 +81,17 @@ class SignUpTableViewController: UITableViewController {
     @IBAction func completeSignUp(sender: AnyObject) {
   
         
-        if emailTextField.text != "" && passwordTextField.text != "" && repeatPasswordTextField.text != "" && firstNameField.text != "" && lastNameField.text != "" {
+        if emailTextField.text != "" && passwordTextField.text != "" && firstNameField.text != "" && lastNameField.text != "" {
             
             var user = PFUser()
             
-            
             user.email = emailTextField.text
-            user.username = emailTextField.text
-            
-            
-            if passwordTextField.text == repeatPasswordTextField.text {
-                user.password = passwordTextField.text
-            }else{
-                let alert = UIAlertController(title: "Check your password", message: "Your entered passwords are not the same", preferredStyle: UIAlertControllerStyle.Alert)
-                
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-                
-                self.presentViewController(alert, animated: true, completion: nil)
-                
-            }
-            
-            
+            user.username = emailTextField.text! + email!
             user["firstName"] = firstNameField.text
             user["lastName"] = lastNameField.text
             user["rank"] = rankField.text
             user["specialty"] = specialtyField.text
+            
             
             user.signUpInBackgroundWithBlock({ (success, error) -> Void in
                 if error == nil {
@@ -100,36 +103,6 @@ class SignUpTableViewController: UITableViewController {
                 }
             })
             
-            
-            
-        }else{
-            let alert = UIAlertController(title: "Missing information", message: "Please fill out all items", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-            
-            self.presentViewController(alert, animated: true, completion: nil)
-            
-            
-        }
-        
-        
-    }
-
-    func changeProfile () {
-        
-        if emailTextField.text != ""  && firstNameField.text != "" && lastNameField.text != "" {
-            
-
-            PFUser.currentUser()!.email = emailTextField.text
-            
-            
-            PFUser.currentUser()!["firstName"] = firstNameField.text
-            PFUser.currentUser()!["lastName"] = lastNameField.text
-            PFUser.currentUser()!.saveInBackgroundWithBlock({ (success, error) -> Void in
-                if error == nil {
-                    self.navigationController?.popViewControllerAnimated(true)
-                }
-            })
             
             
         }else{

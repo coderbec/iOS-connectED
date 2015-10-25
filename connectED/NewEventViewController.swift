@@ -1,30 +1,21 @@
 //
-//  EntryViewController.swift
+//  NewEventViewController.swift
 //  connectED
 //
-//  Created by Rebecca Martin on 24/10/2015.
+//  Created by Rebecca Martin on 25/10/2015.
 //  Copyright © 2015 Rebecca Martin. All rights reserved.
 //
 
 import UIKit
-import Parse
 
-class EntryViewController: UITabBarController {
+class NewEventViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        // Do any additional setup after loading the view.
     }
 
-    override func viewDidAppear(animated: Bool) {
-        // if no user navigate to landing
-        if PFUser.currentUser() == nil{
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("LandingVC") as! LandingViewController
-            self.presentViewController(nextViewController, animated: true, completion: nil)
-        }
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -107,12 +107,12 @@ class OverviewTableViewController: UITableViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
-        return events.count
+        return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return 1
+        return events.count
         
     }
     
@@ -126,27 +126,39 @@ class OverviewTableViewController: UITableViewController {
        // let cell:OverviewTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! OverviewTableViewCell
         
         let owner: PFUser = events[indexPath.row]["owner"] as! PFUser
+        var ownerfirstName = owner["firstName"]
+        var ownerLastName = owner["lastName"]
+
+        //text
         
-        var blurb = events[indexPath.row]["blurb"] as! String
-        var ownerName = owner.username
-        cell.blurbLabel.text = "\(ownerName)   \(blurb)"
+        cell.hospitalLabel.text = events[indexPath.row]["hospital"] as! String
+        cell.doctorLabel.text = "\(ownerfirstName) \(ownerLastName)"
+        cell.timeLabel.text = "Today 2pm"
+
+        //quota
         let headCount = events[indexPath.row]["headCount"] as! Int
         let quota = events[indexPath.row]["quota"] as! Int
         
         let ratio = ("\(headCount)/\(quota)")
         cell.quotaLabel.text = ratio
         
+        //tags
+        cell.tagViewLabel.removeAllTags()
         let tags = events[indexPath.row]["tags"] as! [String]
         for tag in tags{
             cell.tagViewLabel.addTag(tag)
         }
         
+        //images
         let duration = String(events[indexPath.row]["duration"] as! Int)
-        cell.timeLabel.text = duration
-        
+        cell.timeImage.image = UIImage(named: duration)
        
+        //icons
+        let category = events[indexPath.row]["category"] as! String
+        cell.categoryImage.image = UIImage(named: category)
         
         return cell
+        
     }
     
 

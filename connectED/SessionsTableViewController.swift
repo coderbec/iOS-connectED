@@ -13,22 +13,46 @@ class SessionsTableViewController: UITableViewController {
 
     var events = [PFObject]()
     
+    //
+    //    override func awakeFromNib() {
+    //        super.awakeFromNib()
+    //
+    //    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // self.tableView.registerClass(OverviewTableViewCell.self(self), forCellReuseIdentifier: "NewCell")
-    }
-    
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+        
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         if PFUser.currentUser() != nil {
             loadData()
         }
+        
     }
     
-
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func logOut(sender: AnyObject) {
+        PFUser.logOut()
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("LogInVC") as! LoginViewController
+        
+        self.presentViewController(nextViewController, animated:true, completion:nil)
+        
+    }
+    
+    
     
     func loadData(){
         
@@ -52,19 +76,30 @@ class SessionsTableViewController: UITableViewController {
                 self.events = results!
                 print(self.events)
                 
-                
+                self.tableView.reloadData()
                 
                 IJProgressView.shared.hideProgressView()
             }else{
                 print("couldn't get anything")
             }
             
-            self.tableView.reloadData()
+            
         }
         
         
     }
-
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail" {
+            if let destination = segue.destinationViewController as? EventDetailViewController{
+                if let blogIndex = tableView.indexPathForSelectedRow?.row {
+                    destination.event = events[blogIndex]
+                }
+            }
+        }
+    }
+    
     
     // MARK: - Table view data source
     
@@ -76,6 +111,7 @@ class SessionsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
         return events.count
+        
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -83,31 +119,47 @@ class SessionsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //let cell: OverviewTableViewCell = tableView.dequeueReusableCellWithIdentifier("NewCell", forIndexPath: indexPath) as! OverviewTableViewCell
-        let cell: OverviewTableViewCell = tableView.dequeueReusableCellWithIdentifier("NewCell") as! OverviewTableViewCell
-        let owner: PFUser = events[indexPath.row]["owner"] as! PFUser
         
-        var blurb = events[indexPath.row]["blurb"] as! String
-        var ownerName = owner.username
-        cell.blurbLabel.text = "\(ownerName)   \(blurb)"
+        let cell:SessionsTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! SessionsTableViewCell
+        // let cell:OverviewTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! OverviewTableViewCell
+        
+        let owner: PFUser = events[indexPath.row]["owner"] as! PFUser
+        var ownerfirstName = owner["firstName"]
+        var ownerLastName = owner["lastName"]
+        
+        //text
+        
+        cell.hospitalLabel.text = events[indexPath.row]["hospital"] as! String
+        cell.doctorLabel.text = "\(ownerfirstName) \(ownerLastName)"
+        cell.timeLabel.text = "Today 2pm"
+        
+        //quota
         let headCount = events[indexPath.row]["headCount"] as! Int
         let quota = events[indexPath.row]["quota"] as! Int
         
         let ratio = ("\(headCount)/\(quota)")
         cell.quotaLabel.text = ratio
         
+        //tags
+        cell.tagViewLabel.removeAllTags()
         let tags = events[indexPath.row]["tags"] as! [String]
         for tag in tags{
             cell.tagViewLabel.addTag(tag)
         }
         
+        //images
         let duration = String(events[indexPath.row]["duration"] as! Int)
-        cell.timeLabel.text = duration
+        cell.timeImage.image = UIImage(named: duration)
         
-        
+        //icons
+        let category = events[indexPath.row]["category"] as! String
+        cell.categoryImage.image = UIImage(named: category)
         
         return cell
+        
     }
+    
+
     
 
 }
