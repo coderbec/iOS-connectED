@@ -639,7 +639,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Tye a blurb here... maximum 140 characters" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UL1-Cc-SY6">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Tye a blurb here... maximum 140 ckasdlkajharacters" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UL1-Cc-SY6">
                                 <rect key="frame" x="20" y="418" width="272" height="101"/>
                                 <color key="backgroundColor" red="0.83137254900000002" green="0.90588235289999997" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
